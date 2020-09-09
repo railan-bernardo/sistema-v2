@@ -1,0 +1,121 @@
+
+<!-- Content Wrapper. Contains page content -->
+ <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Lista de Alunos
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active"><a href="/admin/alunos">Usuários</a></li>
+      </ol>
+    </section>
+
+                  <!-- Main content -->
+  <section class="content">
+
+   <div class="row">
+  	 <div class="col-lg-12">
+  		  <div class="box box-default">
+
+                <div class="box-header">
+
+                  <a href="/admin/aluno/create" class="btn btn-success pull-right">Novo aluno</a>
+
+                          <div class="col-md-6">
+                              <form action="/admin/alunos" class="search-form">
+                                      <div class="box-body" style="padding-top: 0;">
+                                          <div class="row">
+                                            <div class="col-xs-12">
+                                              <div class="input-group">
+                                                  <input type="text" name="search" class="form-control" placeholder="Faça sua Buscar" value="{$search}">
+                                                  <div class="input-group-btn">
+                                                    <button type="submit" class="btn btn-danger btn-flat"><i class="fa fa-search"></i>
+                                                    </button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                              </form>
+                          </div>
+
+                </div>
+             <div class="box-body no-padding">
+                         <table class="table table-striped">
+                                      <thead>
+                                        <tr>
+                                          <th style="width: 10px">#</th>
+                                          <th>Nome</th>
+                                          <th>Phone</th>
+                                          <th>Cidade</th>
+                                          <th>Status</th>
+                                          <th>Ações</th>
+                                          <th style="width: 140px">&nbsp;</th>
+                                        </tr>
+                                      </thead>
+                                  <tbody>
+                                    {loop="$aluno"}
+                                    <tr>
+                                    <td>{$value.idaluno}</td>
+                                    <td>{$value.desaluno}</td>
+                                    <td>{$value.nrphone}</td>
+                                    <td>{$value.descity}</td>
+
+                                    <td>
+                                      <div class="btn-group">
+                                        <button type="button" class="btn status">{if="$value.desstage == 1"}ET-1{elseif="$value.desstage == 2"}ET-2{else}ET-3{/if}</button>
+
+                                        <div class="btn-group">
+                                          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                            <i class="caret"></i>
+                                          </button>
+                                          <ul class="dropdown-menu">
+                                            <li><a href="/admin/aluno/stage/s1/{$value.idaluno}">ET-1</a></li>
+                                            <li><a href="/admin/aluno/stage/s2/{$value.idaluno}">ET-2</a></li>
+                                            <li><a href="/admin/aluno/stage/s3/{$value.idaluno}">ET-3</a></li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      </td>
+
+                                    <td>
+                                    <a href="/admin/aluno/view/{$value.idaluno}" class="btn btn-warning btn-xs"><i class="fa fa-search"></i> Visualizar</a>
+                                    <a  href="/admin/aluno/{$value.idaluno}/delete" onclick="return confirm('Deseja realmente excluir?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
+                                    </td>
+                                  </tr>
+                                  {/loop}
+                                  </tbody>
+                        </table>
+              
+                  <!-- start paginator -->
+                  <div class="col-sm-7">
+                    <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                      <ul class="pagination">
+                        {loop="$pages"}
+                             {if="$value.href == $value.text"}
+                              <li class="active">
+                                  <a href="{$value.href}" aria-controls="example2" data-dt-idx="1" tabindex="0">{$value.text}</a>
+                              </li>
+                              {else}
+                              <li>
+                                <a href="{$value.href}">{$value.text}</a>
+                            </li>
+                            {/if}
+                         {/loop}
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- end paginator -->
+              
+            </div>
+            <!-- /.box-body -->
+          </div>
+  	   </div>
+     </div>
+
+  </section>
+ <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

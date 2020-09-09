@@ -1,0 +1,1 @@
+window.checkeds = new Utils; 

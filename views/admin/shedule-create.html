@@ -1,0 +1,83 @@
+
+<!-- Content Wrapper. Contains page content -->
+ <div class="content-wrapper">
+   <!-- Content Header (Page header) -->
+            <section class="content-header">
+                    <h1>
+                    Agendar
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li><a href="/admin/shedule">Agendados</a></li>
+                        <li class="active"><a href="">Novo</a></li>
+                    </ol>
+            </section>
+
+      <!-- Main content -->
+        <section class="content">
+
+                 <div class="row">
+                          <div class="col-md-8">
+                                <div class="box box-success">
+                                <div class="box-header with-border">
+                                <h3 class="box-title">Novo</h3>
+                                </div>
+                               <!-- /.box-header -->
+
+                                     <form role="form" action="/admin/schedule/create" method="post">
+                                         <div class="box-body">
+                                               <div class="form-group">
+                                                    <label>Aluno</label>
+                                                   <input type="text" name="desname" class="form-control" placeholder="Nome do aluno">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <input type="checkbox"  name="desclass" value="Aula de troca de tela">
+                                                    <label>Aula troca de tela</label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="checkbox" name="desclass" value="Aula de conectores">
+                                                    <label>Aula de conectores</label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="checkbox" name="desclass" value="Aula de solda">
+                                                    <label>Aula de solda</label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="checkbox" name="desclass" value="Aula de manual service">
+                                                    <label>Aula de manual service</label>
+                                                </div>
+                                        
+                                                     <div class="form-group">
+                                                            <input type="checkbox" name="desclass" value="Consultoria">
+                                                            <label>Consultoria</label>
+                                                            </div>
+                                                            <div class="col-md-5">
+                                                                <div class="form-group">
+                                                            <label>Horário</label>
+                                                            <input type="time" class="form-control" name="destime" >
+                                                       </div>
+                                             </div>
+                                                <div class="col-md-5">
+                                                <div class="form-group">
+                                                        <label>Data</label>
+                                                        <input type="date" class="form-control" name="desdate" >
+                                                    </div>
+                                                </div>
+                                                        <br/><br/><br/><br/>
+                                                        <div class="form-group">
+                                                            <label>Professor</label>
+                                                            <input type="text" class="form-control" name="desteacher" placeholder="Professor">
+                                                        </div>
+                                                </div>
+                                                <!-- /.box-body -->
+                                                <div class="box-footer">
+                                                    <button type="submit" class="btn btn-success">Agendar</button>
+                                                </div>
+                                         </form>
+                             </div>
+                </div>
+        </section>
+        <!-- /.content -->
+ </div>
+<!-- /.content-wrapper -->

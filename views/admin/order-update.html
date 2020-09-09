@@ -1,0 +1,102 @@
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1> Atualizar</h1>
+      <ol class="breadcrumb">
+        <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="/admin/orders">Order</a></li>
+        <li class="active"><a href="">Atualizar</a></li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+      <section class="content">
+
+         <div class="row">
+           <div class="col-md-8">
+             <div class="box box-success">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">Atualizar Ordem de Serviço</h3>
+                  </div>
+                      <!-- /.box-header -->
+                 <form role="form" action="/admin/order/{$order.idcontrol}" method="post">
+                             <div class="box-body">
+                                    <div calss="etapa-1">
+                                        <div class="form-group">
+                                          <label for="desname">Aluno</label>
+                                          <input type="text" class="form-control" id="desname" name="desname" value="{$order.desname}">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="desstate">Estado</label>
+                                                <input type="text" name="desstate" class="form-control" value="{$order.desstate}">
+                                              </div>
+
+                                        </div>
+                                        <div class="col-md-6">
+                                                <div class="form-group">
+                                                 <label for="descity">Cidade</label>
+                                                    <input type="text" name="descity" class="form-control" value="{$order.descity}">
+                                               </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="nrphone">Telefone</label>
+                                                <input type="text" class="form-control" id="nrphone" name="nrphone" value="{$order.nrphone}" data-inputmask="'mask': '(99) 99999-9999'" data-mask="">
+                                              </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="desshift">Turno</label>
+                                                <input type="text" class="form-control" id="desshift" name="desshift"  value="{$order.desshift}">
+                                              </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                           <label>Consultora</label>
+                                            <input type="text" name="desconsultant" class="form-control" value="{$order.desconsultant}">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Professor</label>
+                                                <input type="text" name="desteacher" class="form-control" value="{$order.desteacher}">
+                                              </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Auxiliar</label>
+                                                <input type="text" name="deshelp" class="form-control"  value="{$order.deshelp}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Valor</label>
+                                                  <input type="number" name="desprice" class="form-control" step="0.01" value="{$order.desprice}">
+                                              </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Data</label>
+                                               <input type="text" name="desdate" class="form-control" value="{$order.desdate}"  data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+                                           </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- end create -->
+                            </div>
+                                   <!-- /.box-body -->
+                            <div class="box-footer">
+                              <button type="submit" class="btn btn-success">Salvar</button>
+                            </div>
+                   </form>
+             </div>
+           </div>
+         </div>
+
+      </section>
+   <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+ 

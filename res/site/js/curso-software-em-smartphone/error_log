@@ -1,0 +1,29 @@
+[09-Apr-2020 11:41:59 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Model\GetUser' not found in /home/cacursos/landpage/curso-software-em-smartphone/index.php:142
+Stack trace:
+#0 {main}
+  thrown in /home/cacursos/landpage/curso-software-em-smartphone/index.php on line 142
+[09-Apr-2020 11:45:16 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Model\GetUser' not found in /home/cacursos/landpage/curso-software-em-smartphone/index.php:142
+Stack trace:
+#0 {main}
+  thrown in /home/cacursos/landpage/curso-software-em-smartphone/index.php on line 142
+[09-Apr-2020 11:53:37 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Model\Dao' not found in /home/cacursos/landpage/curso-software-em-smartphone/index.php:142
+Stack trace:
+#0 {main}
+  thrown in /home/cacursos/landpage/curso-software-em-smartphone/index.php on line 142
+[09-Apr-2020 11:56:22 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Model\Dao' not found in /home/cacursos/landpage/curso-software-em-smartphone/index.php:142
+Stack trace:
+#0 {main}
+  thrown in /home/cacursos/landpage/curso-software-em-smartphone/index.php on line 142
+[09-Apr-2020 12:01:26 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Model\Dao' not found in /home/cacursos/landpage/curso-software-em-smartphone/index.php:142
+Stack trace:
+#0 {main}
+  thrown in /home/cacursos/landpage/curso-software-em-smartphone/index.php on line 142
+[09-Apr-2020 12:09:21 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Model\Dao' not found in /home/cacursos/landpage/curso-software-em-smartphone/index.php:142
+Stack trace:
+#0 {main}
+  thrown in /home/cacursos/landpage/curso-software-em-smartphone/index.php on line 142
+[09-Apr-2020 12:10:47 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Model\Dao' not found in /home/cacursos/landpage/curso-software-em-smartphone/index.php:142
+Stack trace:
+#0 {main}
+  thrown in /home/cacursos/landpage/curso-software-em-smartphone/index.php on line 142
+[09-Apr-2020 12:14:09 UTC] PHP Fatal error:  Cannot redeclare App\Model\User::setId() in /home/cacursos/landpage/curso-software-em-smartphone/App/Model/User.php on line 61

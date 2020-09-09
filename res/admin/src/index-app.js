@@ -1,0 +1,1 @@
+window.pdf = new GeneratorPDF("createForm");

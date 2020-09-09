@@ -1,0 +1,776 @@
+<?php
+  require_once 'inc/inc-header.php';
+?>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="uploads/<?= ($result['photo'] == '') ? 'photo.webp' : $result['photo'] ?>" class="img-circle" alt="<?php echo $result['nome'] ?>">
+        </div>
+        <div class="pull-left info">
+          <p><?php echo $result['nome'] ?></p>
+          <!-- Status -->
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+
+      <!-- search form (Optional) -->
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>
+      <!-- /.search form -->
+
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu">
+        <li class="header">HEADER</li>
+        <!-- Optionally, you can add icons to the links -->
+        <li><a href="/admin"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+<li class="treeview">
+        <a href="#"><i class="fa fa-users"></i> <span>Usuários</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+        <ul class="treeview-menu">
+          <li><a href="/admin/users.php"><i class="fa fa-list-ul"></i> <span>Listar usuários</span></a></li>
+          <li><a href="/admin/users-create.php?etapa-1"><i class="fa fa-plus-square-o"></i> <span>Cadastrar novo</span></a></li>
+        </ul>
+        </li>
+        <li><a href="/admin/consutor.php"><i class="fa fa-user"></i> <span>Consultores</span></a></li>
+        <li><a href="/admin/create-contrato.php"><i class="fa fa-file-pdf-o"></i> <span>Contrato</span></a></li>
+        <li>
+          <a href="/admin/new-page.php"><i class="fa fa-link"></i> <span>Nova Página</span></a>
+        </li>
+                <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>Controle</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/admin/controler.php">Lista de Controle</a></li>
+            <li><a href="/admin/create-controle.php">Cadastrar</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Lista de Usuários
+  </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+  <div class="row">
+  	<div class="col-md-8">
+  		<div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Editar Usuário</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+
+        <?php
+
+        require_once "vendor/autoload.php";
+
+        $setNew = new \App\Model\User();
+        $users = new \App\Model\Dao();
+        $conn = new \App\Model\Conexao();
+
+
+        if(isset($_GET['etapa-1'])){
+
+          foreach($users->UserId($_GET['etapa-1']) as $user)
+          {
+
+          }
+        }
+
+        if(isset($_GET['etapa-2'])){
+
+          foreach($users->UserId($_GET['etapa-2']) as $user)
+          {
+       
+          }
+        }
+
+        if(isset($_GET['etapa-3'])){
+
+          foreach($users->UserId($_GET['etapa-3']) as $user)
+          {
+            
+          }
+        }
+
+        if(isset($_GET['etapa-4'])){
+
+          foreach($users->UserId($_GET['etapa-4']) as $user)
+          {
+          
+          }
+        }
+
+        if(isset($_GET['etapa-5'])){
+
+          foreach($users->UserId($_GET['etapa-5']) as $user)
+          {
+           
+          }
+        }
+
+        if(isset($_GET['etapa-6'])){
+
+          foreach($users->UserId($_GET['etapa-6']) as $user)
+          {
+            
+          }
+        }
+        ?>
+
+
+
+          <?php
+          $url = $_SERVER['REQUEST_URI'];
+        
+        switch($url){
+            case "/admin/users-update.php?etapa-1=$user[id]":
+
+              if(isset($_POST['editar']))
+              {
+      
+                $nome = $_POST['nome'];
+                $email = $_POST['email'];
+                $phone = $_POST['phone'];
+                $estado = $_POST['estado'];
+                $cidade = $_POST['cidade'];
+                $curso = $_POST['curso'];
+                $unidade = $_POST['unidade'];
+                $horario = $_POST['horario'];
+                $consutor = $_POST['consultor'];
+                $status = $_POST['statu'];
+                $id = $_POST['id'];
+      
+                $sql = "UPDATE tb_users SET nome = '$nome', email = '$email', phone = '$phone', estado = '$estado', cidade = '$cidade', curso = '$curso', unidade = '$unidade', horario = '$horario', consultor = '$consutor', statu = '$status' WHERE id = '$id'";
+                $stmt = $conn->getConn()->prepare($sql);
+                $stmt->execute();
+                  echo "<div class=\"callout callout-info\"><i class=\"icon fa fa-info\"></i>  Etapa 1 concluida com Sucesso!</div>";
+                  echo "<meta http-equiv=\"refresh\" content=\"1; URL='/admin/users.php' \"/>";
+                
+                
+      
+              };
+
+              ?>
+         <form role="form" action="" method="POST">
+          <div class="box-body">
+            <div class="form-group">
+              <label for="desperson">Nome</label>
+              <input type="text" class="form-control" id="desperson" name="nome" value="<?php echo $user['nome'] ?>">
+            </div>
+            <div class="form-group">
+              <label for="deslogin">Email</label>
+              <input type="email" class="form-control" id="deslogin" name="email" value="<?php echo $user['email']?>">
+            </div>
+            <div class="form-group">
+              <label for="nrphone">Telefone</label>
+              <input type="tel" class="form-control" id="nrphone" name="phone" value="<?php echo $user['phone']?>" data-inputmask="'mask': '(99) 99999-9999'" data-mask="">
+            </div>
+            <div class="form-group">
+              <label for="desemail">Estado</label>
+              <select name="estado" id="estados" class="form-control select2 select2-hidden-accessible" style="width: 100%;">
+              <option selected  value="<?php echo $user['estado']?>"><?php echo $user['estado']?></option>
+             <?php
+                foreach($users->estado() as $estado):
+
+                  echo "<option value=\" $estado[nome]\"> $estado[nome] </option> ";
+                  
+                endforeach;
+             ?>
+              </select>
+                
+            </div>
+            <div class="form-group">
+
+              <label for="desemail">Cidade</label>
+              <select name="cidade" id="cidades" class="form-control select2 select2-hidden-accessible" style="width: 100%;">
+               <option selected value="<?php echo $user['cidade']?>"><?php echo $user['cidade']?></option>
+             <?php
+                foreach($users->cidades() as $city):
+
+                  echo "<option value=\" $city[nome]\"> $city[nome] </option> ";
+                  
+                endforeach;
+             ?>
+              </select>
+            
+            </div>
+            <div class="form-group">
+              <label for="despassword">Curso de Interese</label>
+              <input type="curso" class="form-control" id="despassword" name="curso" value="<?php echo $user['curso']?>">
+            </div>
+            <div class="form-group">
+              <label>Unidade de Interese</label>
+              <select name="unidade" class="form-control">
+              <option selected value="<?php echo $user['unidade'] ?>"><?php echo $user['unidade'] ?></option>
+                <?php
+              foreach($users->readUN() as $unidades){
+                 echo "
+                 <option value=\"$unidades[nome]\">
+                 $unidades[nome]
+                 </option>";
+              }
+                ?>
+              </select>
+              
+            </div>
+            <div class="form-group">
+              <label>Horário de Interese</label>
+              <select name="horario" class="form-control">
+              <option selected value="<?php echo $user['horario'] ?>"><?php echo $user['horario'] ?></option>
+                <?php
+              foreach($users->readHR() as $horarios){
+                 echo "
+                 <option value=\"$horarios[nome]\">
+                 $horarios[nome]
+                 </option>";
+              }
+                ?>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Consultor</label>
+                <input type="text" name="consultor" class="form-control" placeholder="Digite o Horario" value="<?php echo $user['consultor']?>">
+            </div>
+            <div class="form-group">
+                            <input type="hidden" name="statu" class="form-control"  value="ET-1">
+             </div>
+
+             <div class="form-group">
+                  <input type="hidden" name="id" class="form-control"  value="<?php echo $user['id'] ?>">
+             </div>
+          </div>
+          <!-- /.box-body -->
+          <div class="box-footer">
+            <button type="submit" name="editar" class="btn btn-primary">Salvar</button>
+          </div>
+        </form>
+      </div>
+              <?php
+            break;//etapa 1
+
+            case "/admin/users-update.php?etapa-2=$user[id]":
+
+              if(isset($_POST['editar-etapa-2']))
+              {
+      
+                $status = $_POST['statu'];
+                $conteudo = $_POST['conteudo'];
+                $duvida = $_POST['duvida'];
+                $id = $_POST['id'];
+      
+                $sql = "UPDATE tb_users SET statu = '$status', conteudo = '$conteudo', duvida = '$duvida' WHERE id = '$id'";
+                $stmt = $conn->getConn()->prepare($sql);
+                $stmt->execute();
+                  echo "<div class=\"callout callout-info\"><i class=\"icon fa fa-info\"></i>  Etapa 2 concluida com Sucesso!</div>";
+                  echo "<meta http-equiv=\"refresh\" content=\"1; URL='/admin/users.php' \"/>";
+                
+                
+      
+              };
+              ?>
+       <form role="form" action="" method="POST">
+          <div class="box-body">
+                <div class="form-group">
+                            <h3>Envio de conteúdo</h3>
+
+                            <label> 
+                            <input type="checkbox" name="conteudo" value="Blog"/> &nbsp;
+                            Blog
+                            </label><br>
+
+                            <label>
+                            <input type="checkbox" name="conteudo" value="Canal"/> &nbsp;
+                            Canal 
+                            </label><br>
+
+                            <label>
+                            <input type="checkbox" name="conteudo" value="Site"/>  &nbsp;
+                            Site 
+                            </label>
+
+                            <h3>Tirou todas as Dúvidas</h3>
+
+                            <label> 
+                            <input type="checkbox" name="duvida" value="Sim"/> &nbsp;
+                            Sim
+                            </label><br>
+
+                            <label>
+                            <input type="checkbox" name="duvida" value="Não"/> &nbsp;
+                            Não 
+                            </label><br>
+                          </div>
+
+                          <div class="form-group">
+                            <input type="hidden" name="statu" class="form-control"  value="ET-2">
+                        </div>
+                        <div class="form-group">
+                  <input type="hidden" name="id" class="form-control"  value="<?php echo $user['id'] ?>">
+             </div>
+                        <div class="box-footer">
+            <button type="submit" name="editar-etapa-2" class="btn btn-primary">Salvar</button>
+          </div>
+        </form>
+      </div>
+              <?php
+            break;//etapa 2
+
+            case "/admin/users-update.php?etapa-3=$user[id]":
+
+              if(isset($_POST['editar-etapa-3']))
+              {
+      
+                $status = $_POST['statu'];
+                $avaliacao = $_POST['avaliacao'];
+               // $motivos = $_POST['motivos'];
+                $reduvida = $_POST['reduvida'];
+                $id = $_POST['id'];
+      
+                $sql = "UPDATE tb_users SET statu = '$status', avaliacao = '$avaliacao', reduvida = '$reduvida' WHERE id = '$id'";
+                $stmt = $conn->getConn()->prepare($sql);
+                $stmt->execute();
+                  echo "<div class=\"callout callout-info\"><i class=\"icon fa fa-info\"></i>  Etapa 3 concluida com Sucesso!</div>";
+                  echo "<meta http-equiv=\"refresh\" content=\"1; URL='/admin/users.php' \"/>";
+
+              };
+              ?>
+            <form role="form" action="" method="POST">
+          <div class="box-body">
+                <div class="form-group">
+                          <h3>Avaliação do Atendimento</h3>
+                          <label>
+                          <input type="radio" name="avaliacao" value="0 a 3"/> &nbsp;
+                            0 a 3 
+                          </label><br>
+
+                          <label>
+                          <input type="radio" name="avaliacao" value="3 a 6"/> &nbsp;
+                            3 a 6 
+                          </label><br>
+
+                          <label>
+                          <input type="radio" name="avaliacao" value="6 a 8"/> &nbsp;
+                            6 a 8 
+                          </label><br>
+
+                          <label>
+                          <input type="radio" name="avaliacao" value="9 a 10"/> &nbsp;
+                            9 a 10
+                          </label>
+                          </div>
+
+                          <div class="form-group">
+                          <h3>Ficou alguma Dúvida?</h3>
+                          <label>
+                          <input type="radio" name="reduvida" value="Sim"/> &nbsp;
+                            Sim
+                          </label><br>
+
+                          <label>
+                          <input type="radio" name="reduvida" value="Não"/> &nbsp;
+                            Não
+                          </label>
+                          </div>
+
+                          <!-- <div class="form-group">
+                          <h3>Qual o motivo de fazer o curso?</h3>
+                          <label>
+                          <input type="radio" name="motivos" value="Ter mais tempo para familia"/> &nbsp;
+                            Ter mais tempo para familia
+                          </label><br>
+
+                          <label>
+                          <input type="radio" name="motivos" value="Começar um negócio próprio"/> &nbsp;
+                            Começar um negócio próprio
+                          </label><br>
+
+                          <label>
+                          <input type="radio" name="motivos" value="Trabalhar emcasa"/> &nbsp;
+                            Trabalhar emcasa
+                          </label>
+                          </div> -->
+
+                          <div class="form-group">
+                            <input type="hidden" name="statu" class="form-control"  value="ET-3">
+                        </div>
+                        <div class="form-group">
+                  <input type="hidden" name="id" class="form-control"  value="<?php echo $user['id'] ?>">
+             </div>
+                        <div class="box-footer">
+            <button type="submit" name="editar-etapa-3" class="btn btn-primary">Salvar</button>
+          </div>
+        </form>
+      </div>
+              <?php
+            break;//etapa 3
+
+            case "/admin/users-update.php?etapa-4=$user[id]":
+
+              if(isset($_POST['editar-etapa-4']))
+              {
+      
+                $status = $_POST['statu'];
+                $chamada = $_POST['chamada'];
+                $id = $_POST['id'];
+      
+                $sql = "UPDATE tb_users SET statu = '$status', chamada = '$chamada' WHERE id = '$id'";
+                $stmt = $conn->getConn()->prepare($sql);
+                $stmt->execute();
+                  echo "<div class=\"callout callout-info\"><i class=\"icon fa fa-info\"></i>  Etapa 4 concluid com Sucesso!</div>";
+                  echo "<meta http-equiv=\"refresh\" content=\"1; URL='/admin/users.php' \"/>";
+
+              };
+              ?>
+          <form role="form" action="" method="POST">
+          <div class="box-body">
+                        <div class="form-group">
+                            <h3>Convite / Chamada de ação</h3>
+                            <label>Convidara para:</label><br>
+                            <label>
+                            <input type="radio" name="chamada" value="Conhecer o Blog"/> &nbsp;
+                              Conhecer o Blog
+                            </label><br>
+
+                            <label>
+                            <input type="radio" name="chamada" value="Conhecer e se inscrever no Canal"/> &nbsp;
+                              Conhecer e se inscrever no Canal
+                            </label><br>
+
+                            <label>
+                            <input type="radio" name="chamada" value="Seguir nosso Instagram"/> &nbsp;
+                              Seguir nosso Instagram
+                            </label><br>
+
+                            <label>
+                            <input type="radio" name="chamada" value="Visitar a loja e tomar um Café"/> &nbsp;
+                              Visitar a loja e tomar um Café
+                            </label>
+                            </div>
+
+                            <div class="form-group">
+                            <input type="hidden" name="statu" class="form-control"  value="ET-4">
+                        </div>
+                        <div class="form-group">
+                  <input type="hidden" name="id" class="form-control"  value="<?php echo $user['id'] ?>">
+             </div>
+                        <div class="box-footer">
+            <button type="submit" name="editar-etapa-4" class="btn btn-primary">Salvar</button>
+          </div>
+        </form>
+      </div>
+              <?php
+            break;//etapa 4
+
+            case "/admin/users-update.php?etapa-5=$user[id]":
+
+              if(isset($_POST['editar-etapa-5']))
+              {
+      
+                $status = $_POST['statu'];
+                $aqrelacionar = $_POST['aqrelacionar'];
+                $id = $_POST['id'];
+      
+                $sql = "UPDATE tb_users SET statu = '$status', aqrelacionar = '$aqrelacionar' WHERE id = '$id'";
+                $stmt = $conn->getConn()->prepare($sql);
+                $stmt->execute();
+                echo "<div class=\"callout callout-info\"><i class=\"icon fa fa-info\"></i>  Etapa 5 concluida com Sucesso!</div>";
+                echo "<meta http-equiv=\"refresh\" content=\"1; URL='/admin/users.php' \"/>";
+
+              };
+
+              ?>
+          <form role="form" action="" method="POST">
+          <div class="box-body">
+                            <div class="form-group">
+                              <h3>Aquecer o relacionamento</h3>
+                              <label>
+                              <input type="radio" name="aqrelacionar" value="Convite para um evento on line"/> &nbsp;
+                                Convite para um evento on line
+                              </label><br>
+
+                              <label>
+                              <input type="radio" name="aqrelacionar" value=" Convite para uma oficina Presencial"/> &nbsp;
+                                Convite para uma oficina Presencial
+                              </label><br>
+
+                              <label>
+                              <input type="radio" name="aqrelacionar" value=" Dar um ebook de como montar sua Assistência"/> &nbsp;
+                                Dar um ebook de como montar sua Assistência
+                              </label><br>
+
+                              <label>
+                              <input type="radio" name="aqrelacionar" value="Outro Convite"/> &nbsp;
+                                Outro Convite
+                              </label>
+                           </div>
+
+                           <div class="form-group">
+                            <input type="hidden" name="statu" class="form-control"  value="ET-5">
+                        </div>
+                        <div class="form-group">
+                  <input type="hidden" name="id" class="form-control"  value="<?php echo $user['id'] ?>">
+             </div>
+                        <div class="box-footer">
+            <button type="submit" name="editar-etapa-5" class="btn btn-primary">Salvar</button>
+          </div>
+        </form>
+      </div>
+              <?php
+            break;//etapa 5
+
+            case "/admin/users-update.php?etapa-6=$user[id]":
+
+              if(isset($_POST['editar-etapa-6']))
+              {
+      
+                $status = $_POST['statu'];
+                $gavalor = $_POST['gavalor'];
+                $madata = $_POST['madata'];
+                $conta = $_POST['conta'];
+                $id = $_POST['id'];
+      
+                $sql = "UPDATE tb_users SET statu = '$status', gavalor = '$gavalor', madata = '$madata', conta = '$conta' WHERE id = '$id'";
+                $stmt = $conn->getConn()->prepare($sql);
+                $stmt->execute();
+                  echo "<div class=\"callout callout-info\"><i class=\"icon fa fa-info\"></i>  Etapa 6 concluida com Sucesso!</div>";
+                  echo "<meta http-equiv=\"refresh\" content=\"1; URL='/admin/users.php' \"/>";
+
+              };
+              ?>
+           <form role="form" action="" method="POST">
+          <div class="box-body">
+                                <h3>Fechamento</h3>
+                                <div class="form-group col-xs-5">
+                                <label>Garantia de vaga Valor:</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
+                                    <input type="number" name="gavalor" class="form-control">
+                                    <span class="input-group-addon"><i class="fa fa-money"></i></span>
+                                  </div>
+                                </div>
+
+                                <div class="form-group col-xs-7">
+                                <label>Data da Garantia</label>
+                                <div class="input-group">
+                                      <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                      </div>
+                                      <input type="text" name="madata" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                  <h3>Conta da Garantia</h3>
+                                  <label>
+                                  <input type="radio" name="conta" value="Itaú: Agência 0147 conta 06260-8 Cristiano Alves"/>&nbsp;
+                                  Itaú: Agência 0147 conta 06260-8 Cristiano Alves
+                                  </label><br>
+
+                                  <label>
+                                  <input type="radio" name="conta" value="Caixa: Agência 1340 conta 060020-6 Operação 013 Cristiano Alves"/>&nbsp;
+                                  Caixa: Agência 1340 conta 060020-6 Operação 013 Cristiano Alves
+                                  </label><br>
+
+                                  <label>
+                                  <input type="radio" name="conta" value="Next / Bradesco: Agência 3925 conta 191654-8 Cristiano Alves"/>&nbsp;
+                                  Next / Bradesco: Agência 3925 conta 191654-8 Cristiano Alves
+                                  </label><br>
+
+                                  <label>
+                                  <input type="radio" name="conta" value="Pag Bank: Banco 290 Agência 0001 conta 06411913-4 Cristiano Alves"/>&nbsp;
+                                  Pag Bank: Banco 290 Agência 0001 conta 06411913-4 Cristiano Alves
+                                  </label><br>
+
+                                  <label>
+                                  <input type="radio" name="conta" value="Mercado Pago: Link de Pagamento"/>&nbsp;
+                                  Mercado Pago: Link de Pagamento
+                                  </label><br>
+                                </div>
+                                <div class="form-group">
+                            <input type="hidden" name="statu" class="form-control"  value="ET-6">
+                        </div>
+                        <div class="form-group">
+                  <input type="hidden" name="id" class="form-control"  value="<?php echo $user['id'] ?>">
+             </div>
+                        <div class="box-footer">
+            <button type="submit" name="editar-etapa-6" class="btn btn-primary">Salvar</button>
+          </div>
+        </form>
+      </div>
+              <?php
+            break;//etapa 6
+        }
+
+          ?>
+
+
+  	</div>
+  </div>
+
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+ <!-- Main Footer -->
+ <footer class="main-footer">
+  <!-- To the right -->
+  <div class="pull-right hidden-xs">
+    Anything you want
+  </div>
+  <!-- Default to the left -->
+  <strong>Copyright &copy; 2020 <a href="#">CACURSOS</a>.</strong> All rights reserved.
+</footer>
+
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+  <!-- Create the tabs -->
+  <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+    <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+    <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+  </ul>
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <!-- Home tab content -->
+    <div class="tab-pane active" id="control-sidebar-home-tab">
+      <h3 class="control-sidebar-heading">Recent Activity</h3>
+      <ul class="control-sidebar-menu">
+        <li>
+          <a href="javascript:;">
+            <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+            <div class="menu-info">
+              <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+              <p>Will be 23 on April 24th</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <!-- /.control-sidebar-menu -->
+
+      <h3 class="control-sidebar-heading">Tasks Progress</h3>
+      <ul class="control-sidebar-menu">
+        <li>
+          <a href="javascript:;">
+            <h4 class="control-sidebar-subheading">
+              Custom Template Design
+              <span class="pull-right-container">
+                <span class="label label-danger pull-right">70%</span>
+              </span>
+            </h4>
+
+            <div class="progress progress-xxs">
+              <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <!-- /.control-sidebar-menu -->
+
+    </div>
+    <!-- /.tab-pane -->
+    <!-- Stats tab content -->
+    <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+    <!-- /.tab-pane -->
+    <!-- Settings tab content -->
+    <div class="tab-pane" id="control-sidebar-settings-tab">
+      <form method="post">
+        <h3 class="control-sidebar-heading">General Settings</h3>
+
+        <div class="form-group">
+          <label class="control-sidebar-subheading">
+            Report panel usage
+            <input type="checkbox" class="pull-right" checked>
+          </label>
+
+          <p>
+            Some information about this general settings option
+          </p>
+        </div>
+        <!-- /.form-group -->
+      </form>
+    </div>
+    <!-- /.tab-pane -->
+  </div>
+</aside>
+<!-- /.control-sidebar -->
+<!-- Add the sidebar's background. This div must be placed
+     immediately after the control sidebar -->
+<div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 2.2.3 -->
+<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="plugins/select2/select2.full.min.js"></script>
+<script src="plugins/input-mask/jquery.inputmask.js"></script>
+  <script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+    <script src="plugins/input-mask/jquery.inputmask.phone.extensions.js"></script>
+  <script src="plugins/fastclick/fastclick.js"></script>
+  <script src="dist/js/adminlte.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/app.min.js"></script>
+
+<!-- Optionally, you can add Slimscroll and FastClick plugins.
+   Both of these plugins are recommended to enhance the
+   user experience. Slimscroll is required when using the
+   fixed layout. -->
+    <script>
+
+          document.querySelector('form').addEventListener("click", e =>{
+              
+              window.location.href = ('http://www.landpage.com.br/admin/users');
+            
+        })
+    </script>
+    <script>
+  $(function () {
+    $('.select2').select2()
+
+    //Datemask dd/mm/yyyy
+    $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+    //Datemask2 mm/dd/yyyy
+    $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+    //Money Euro
+    $('[data-mask]').inputmask()
+
+
+  })
+</script>
+</body>
+</html>

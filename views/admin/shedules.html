@@ -1,0 +1,65 @@
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Agendados
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active"><a href="">agendados</a></li>
+            </ol>
+        </section>
+
+<!-- Main content -->
+<section class="content">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="box box-primary">
+                    
+                    <div class="box-header">
+                    <a href="/admin/schedule/create" class="btn btn-success">Novo</a>
+                    </div>
+
+                    <div class="box-body no-padding">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th style="width: 10px">#</th>
+                            <th>Aluno</th>
+                            <th>Aula</th>
+                            <th>Horário</th>
+                            <th>Professor</th>
+                            <th>Data</th>
+                            <th>Ações</th>
+                            <th style="width: 140px">&nbsp;</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {loop="$schedule"}
+                            <tr>
+                                <td>{$value.idshe}</td>
+                                <td>{$value.desname}</td>
+                                <td>{$value.desclass}</td>
+                                <td>{$value.destime}</td>
+                                <td>{$value.desteacher}</td>
+                                <td>{function="fomatDate($value.desdate)"}</td>
+                                <td>
+                                    <a  href="/admin/schedule/{$value.idshe}/delete" onclick="return confirm('Deseja realmente excluir')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
+                                </td>
+                            </tr>
+                            {/loop}
+                        </tbody>
+                    </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+        </div>
+
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

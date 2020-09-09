@@ -1,0 +1,558 @@
+<header class="main-header-full">
+
+    <div class="row row-flex">
+
+
+
+        <div class="box-logo">
+
+            <img src="/res/site/assets/images/marca_dagua_escura.png" alt="Escola de curso de manutenção em smartphone " title="Escola de curso de manutenção em smartphone">
+
+        </div>
+
+        <!-- end logo -->
+
+
+
+        <div class="box-social">
+
+            <a href="https://www.facebook.com/cacursos/" target="_blank" title="Curta Nossa Página no Facebook" class="icon-facebook-square"></a>
+
+            <a href="https://www.instagram.com/manualdocelular_/" target="_blank" title="Siga no Instagram" class="icon-instagram"></a>
+
+            <a href="https://blog.cacursos.com.br/" title="Acompanhe Nosso Blog" target="_blank" class="icon-social-blogger"></a>
+
+            <a href="https://www.youtube.com/channel/UC5Wq3-6-92m8xHQUJgTGrqQ" title="Se Inscreva no Canal" target="_blank" class="icon-youtube-play"></a>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- header top -->
+
+<section class="content-header">
+
+    <div class="row row-flex row-center">
+
+    <article class="rol-5 box-title" data-aos="zoom-in">
+
+        <header class="content-title">
+
+            <h1>Curso de Manutenção em Smartphones Nível I ao III</h1>
+
+            <h2>Curso Presencial que começa do zero e te prepara para Trabalhar em uma assistência ou montar uma !</h2>
+
+            <a href="https://landpage.cacursos.com.br/manualdocelular.php" target="_blank" class="buttom-co bt-none">Quero Mais Informaçõe Sobre o Curso</a>
+                <!-- <div class="main-promo">
+                <span class="tag">Promoção</span>
+            <h2>Mês dos Pais</h2>
+            <h3>Curso de Manutenção +Software Livres<h3>
+            <div class="t_footer">
+                <span>De R$ <del>2000,00</del> Por</span>
+
+                <div class="preco_t">
+                    <span>134,00 <small>12x</small></span>
+                    <span>sem juros</span>
+                    <p>Vagas limitdas e turmas reduzidas!</p>
+                </div>
+            </div> -->
+        </header>
+
+    </article>
+
+    <article class="rol-5 box-form" data-aos="flip-right">
+
+
+        <form class="form" action="/create" method="POST" autocomplete="off">
+
+            <div class="form-title">
+
+                <h2>Faça Parte</h2>
+
+            </div>
+            {if="$msgSuccess != ''"}
+            <div class="alert success">{$msgSuccess}</div>
+            {/if}
+            <div class="form-group">
+
+                    <label>Nome</label>
+
+                    <input type="text" name="desaluno" placeholder="Seu nome..." autocomplete="off" required/>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>E-mail</label>
+
+                    <input type="email" name="desemail" placeholder="Seu email..." autocomplete="off" required/>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>Whatsapp</label>
+
+                    <input type="tel" name="nrphone" placeholder="(DDD) 00000-0000" required autocomplete="off"/>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Estado</label>
+                    <select name="desstate" id="estados" required>
+                        <option></option>
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Cidade</label>
+                    <select name="descity" id="cidades" required>
+                        
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Curso</label>
+
+                         <input type="text"  name="descurso" value="Manutenção Smartphones I ao III"/>
+
+                    </div>
+
+                    <div class="form-group">
+                        <input type="hidden"  name="idperson" value="9"/>
+                        <input type="hidden"  name="desturno" value="vazio"/>
+                          <input type="hidden"  name="desunity" value="vazio"/>
+                            
+                        </div>
+                        
+                           <div class="form-group">
+                            <input type="hidden"  name="desstage" value="1"/>
+                          
+                            
+                        </div>
+
+                        <div class="form-group">
+                            <input type="hidden"  name="descontent" value="vazio"/>
+                              <input type="hidden"  name="desboubt" value="vazio"/>
+                          </div>
+                          
+                             <div class="form-group">
+                             <input type="hidden"  name="desprice" value="00.00"/>
+                              <input type="hidden"  name="gdate" value="00-00-000"/>
+                          </div>
+
+                          <div class="form-group">
+                            <input type="hidden"  name="desacount" value="Não informado"/>
+                         </div>
+
+                <div class="form-group" style="display: flex; align-items: center;">
+                    <span class="icon-check-square check"></span>
+                    <input type="checkbox"name="check" id="check" required style="width: 25px; height: 25px; padding: 0;"/>
+                    <p style="font-size: .9em; font-weight: 400; color: #999999; padding-left: 8px; font-family: 'Montserrat',sans-serif;">Não sou um robô</p>
+                </div>
+
+
+
+                <input type="submit" class="button-env" value="Quero agendar minha ligação">
+
+        </form>
+
+
+
+       
+
+    </article>
+
+</div>
+
+</section>
+
+<!-- end header dobra principal -->
+
+
+
+<main class="container">
+
+    <div class="row">
+
+    <section class="main-video">
+
+    <header class="text-title">
+
+        <h1>O que você irá aprender nesse curso?</h1>
+
+    </header>
+
+    
+
+    <div class="box-video">
+
+        <div class="video" data-aos="fade-up">
+           <!--   <video controls style="width: 100%;">
+              <source src="assets/video/curso-de-manutencao.mp4" type="video/mp4">
+            </video> -->
+
+             <iframe style="width:100%; height: 100%;" src="https://www.youtube.com/embed/--SM_gBNc5M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+
+    </div>
+    
+    </div>
+        <div style="text-align: center; margin: 50px 0 20px 0"><a href="https://drive.google.com/file/d/1FgYbwd-Zjj7R-F35iUjrs9h8pIPEWatr/view" target="_blank" class="buttom-co" style="margin: 30px 0 20px 0">Baixe o Cronograma</a></div>
+</section>
+
+<!-- end dobra video -->
+
+
+
+<section class="box-service">
+
+    <header class="text-title">
+
+    <h1>Diferenciais  CA Cursos</h1>
+
+     </header>
+
+
+
+    
+
+    <div class="content-service">
+
+        <article class="service" data-aos="fade-rigth">
+
+            <h2><span class="icon-social-foursquare"></span>Antes</h2>
+
+
+
+                <div class="box-icon">
+
+                     <a href="https://blog.cacursos.com.br/" target="_blank">Blog</a>
+
+                   <img src="/res/site/assets/images/icones/blogger.png" alt="Blog"/>
+
+                   <p>Estude diariamente!</p>
+
+                </div>
+
+
+
+                <div class="box-icon box-zebra">
+
+                    <span>Consultoria</span>
+
+                   <img src="/res/site/assets/images/icones/consutoria.png" alt="Consultoria"/>
+
+                    <p>Escolha o curso certo!</p>
+
+                </div>
+
+
+
+                <div class="box-icon">
+
+                     <a href="https://www.youtube.com/channel/UC5Wq3-6-92m8xHQUJgTGrqQ" target="_blank">Canal</a>
+
+                   <img src="/res/site/assets/images/icones/youtube.png" alt="YouTube"/>
+
+                   <p>+ de 91 Mil Inscritos</p>
+
+                </div>
+
+                
+
+                 <div class="box-icon box-zebra  box-zebra-none">
+
+
+
+                </div>
+
+
+
+                <div class="box-icon box-zebra-none">
+
+
+
+                </div>
+
+
+
+        </article>
+
+        
+
+        <article class="service" data-aos="fade-up">
+
+            <h2><span class="icon-social-foursquare"></span>Durante </h2>
+
+
+
+            <div class="box-icon box-zebra">
+
+                 <span>Apostila</span>
+
+                   <img src="/res/site/assets/images/icones/lista.png" alt="Apostilha"/>
+
+                    <p>Conteúdo Próprio</p>
+
+                </div>
+
+
+
+                <div class="box-icon">
+
+                    <span>Bancada e Equipamentos</span>
+
+                   <img src="/res/site/assets/images/icones/bancada.png" alt="Bancada"/>
+
+                     <p>Individuais!</p>
+
+                </div>
+
+
+
+                <div class="box-icon box-zebra  box-zebra-none">
+
+
+
+                </div>
+
+
+
+                <div class="box-icon zebra-mobil">
+
+                    <span>Fornecedores</span>
+
+                   <img src="/res/site/assets/images/icones/frete.png" alt="Fornecedor de peças"/>
+
+                   <p>Para manter seu Negócio!</p>
+
+                </div>
+
+
+
+                <div class="box-icon box-zebra bg-none">
+
+                      <span>Aparelhos Estragados</span>
+
+                   <img src="/res/site/assets/images/icones/iphone.png" alt="Iphone"/>
+
+                 <p>Traga, Conserte e Lucre!</p>
+
+                </div>
+
+
+
+        </article>
+
+
+
+        <article class="service" data-aos="fade-down">
+
+            <h2><span class="icon-social-foursquare"></span>Depois </h2>
+
+
+
+            <div class="box-icon zebra-mobil">
+
+                  <span>Certificado</span>
+
+                   <img src="/res/site/assets/images/icones/certificado.png" alt="Certificado"/>
+
+                 <p>Reconhecido!</p>
+
+                </div>
+
+
+
+                <div class="box-icon box-zebra bg-none">
+
+                     <span>Sistema de Treinamento</span>
+
+                   <img src="/res/site/assets/images/icones/pc.png" alt="Sistema Continuo de Treinamento"/>
+
+                  <p>Continuo!</p>
+
+                </div>
+
+
+
+                <div class="box-icon zebra-mobil">
+
+                     <span>Grupo de Alunos</span>
+
+                   <img src="/res/site/assets/images/icones/telegram-group.png" alt="Grupo Telegram"/>
+
+                  <p>Experiência compartilhada!</p>
+
+                </div>
+
+
+
+                <div class="box-icon box-zebra  box-zebra-none">
+
+
+
+                </div>
+
+
+
+                <div class="box-icon box-zebra-none">
+
+
+
+                </div>
+
+        </article>
+
+
+
+    </div>
+
+    <div class="button">
+
+        <a href="https://landpage.cacursos.com.br/manualdocelular.php" target="_blank" class="buttom-co">Quero Mais Informaçõe Sobre o Curso</a>
+
+    </div>
+
+</section>
+
+    <div class="clear"></div>
+
+</div>
+
+<section class="section-header">
+
+<header class="sub-title">
+
+    <h1>+ 7.000 Alunos Formados</h1>
+
+</header>
+
+<div class="row">
+
+<div class="authores">
+
+        <article class="profs" data-aos="zoom-in">
+
+            <div class="box-image">
+
+                <img src="/res/site/assets/images/alunos/uriel.png" alt="Aluno uriel"/>
+
+            </div>
+
+            <div class="box-info">
+
+                <h2>Uriel Favilla</h2>
+
+                <p>" Muito bom,instrutores muito bem preparados e atenciosos, muito surprendido com a qualidade dos processos, execelente para quem quer iniciar um negócio e/ou se profissionalizar."</p>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="profs" data-aos="zoom-in-up">
+
+            <div class="box-image">
+
+                <img src="/res/site/assets/images/alunos/rosangela.png" alt="Aluna Rosangela"/>
+
+            </div>
+
+            <div class="box-info">
+
+                <h2>Rosângela Norato</h2>
+
+                <p>"A experiência foi muito boa, professores profissionais e totalmente satisfatório... Obrigada CA cursos pela capacitaçao"</p>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="profs" data-aos="zoom-in-down">
+
+            <div class="box-image">
+
+                <img src="/res/site/assets/images/alunos/arthur.png" alt="Aluno Arthur"/>
+
+            </div>
+
+            <div class="box-info">
+
+                <h2>Arthur Nunes</h2>
+
+                <p>"Atendimento excelente desde a recepção aos professores, acolhimento do aluno como uma família, didática incrível!! Simplesmente fazem cada centavo investido valer a pena!! 
+
+Parabéns a toda a equipe!! Logo mais estou aí para me aperfeiçoar mais "</p>
+
+            </div>
+
+        </article>
+
+</div>
+
+    </div>
+
+</section>
+
+<section class="main-time">
+<div class="row">
+    <header class="header-time">
+        <div class="col">
+        <h1>Horários do Curso</h1>
+        <h2>Duração 44 Horas</h2>
+    </div>
+    </header>
+    <div class="col">
+        <article class="box-time" data-aos="fade-up">
+            <h2>MATUTINO</h2>
+            <span>Duração: Duas semanas – Segunda à Sexta</span>
+            <span>Horário: 8h45 às 12h30</span>
+        </article>
+
+        <article class="box-time" data-aos="fade-up">
+            <h2>VESPERTINO</h2>
+            <span>Duração: Duas semanas – Segunda à Sexta</span>
+            <span>Horário: 13h30 às 18h15</span>
+        </article>
+
+        <article class="box-time" data-aos="fade-up">
+            <h2>NOTURNO</h2>
+            <span>Duração: Duas semanas – Segunda à Sexta</span>
+            <span>Horário: 18h30 às 22h30</span>
+        </article>
+
+        <article class="box-time" data-aos="fade-up">
+            <h2>INTEGRAL</h2>
+            <span>Duração: Uma semana – Segunda à Sexta</span>
+            <span>Horário: 8h45 às 18h15 com 1 h de Almoço</span>
+        </article>
+
+        <article class="box-time" data-aos="fade-up">
+            <h2>INTENSIVO</h2>
+            <span>Duração: Cinco sábados- consecutivos</span>
+            <span>Horário: 09h às 18h com 1 h de Almoço</span>
+        </article>
+    </div>
+</div>
+</section>
+
+
+</main>

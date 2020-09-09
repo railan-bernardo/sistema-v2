@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>CACURSOS | Painel</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="/res/admin/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/res/admin/plugins/select2/select2.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+
+  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+        page. However, you can choose any other skin. Make sure you
+        apply the skin class to the body tag so the changes take effect.
+  -->
+
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body>
+
+
+
+<div style="width: 90%; margin: 0 auto;">
+    <!-- Content Header (Page header) -->
+    
+    <!-- Main content -->
+    <section class="content">
+    
+      <div class="row">
+          <div class="col-md-12">
+              <div class="invoice">
+    
+            <div class="row">
+            <div class="col-xs-12">
+                <button type="button" class="btn btn-info" id="imprimir" style="margin: 15px;"><i class="fa fa-print" ></i></button>
+                <button type="button" class="btn btn-primary back">Voltar</button>
+              <h3 class="page-header" style="border: 1px solid #000; padding: 30px 15px; text-align: center;">
+                  <strong>
+                        TERMO DE CONTRATAÇÃO E MATRÍCULA CURSOS<br>
+                        PROFISSIONALIZANTES
+                  </strong>                
+              </h3>
+            </div>
+            <!-- /.col -->
+          </div>
+    
+          <div class="row invoice-info">
+              <div class="col-md-12 invoice-col">
+                  <h5><strong>CONTRATADA</strong>: CA Cursos sediada na Rua 02, N° 115 - Centro, na cidade de Goiânia<br>
+                    inscrita no <strong>N° 09.068.723/0001-05</strong>.
+                    </h5>
+                  <br><br>
+                  <span><strong>Aluno</strong>: {$contract.desname}</span><br>
+                  <span><strong>Responsavel pelo Aluno</strong>: {if="$contract.desparent == ''"}Eu Mesmo (a){else}{$contract.desparent}{/if}</span>
+              </div>
+            <div class="col-md-12 invoice-col">
+              <address>
+                <h2><strong>Contratante responsável legal e financeiro:</strong></h2><br>
+                <span><strong>Nome: </strong>{$contract.desname}</span><br>
+                <span><strong>E-mail: </strong>{$contract.desemail}</span><br>
+                <span><strong>CPF: </strong>{$contract.nrcpf}</span>&nbsp;&nbsp;
+                <span><strong>RG: </strong>{$contract.nrrg}</span>&nbsp;&nbsp;
+                <span><strong>Data de Nacimento: </strong>{$contract.desbirthday}</span><br>
+                <span><strong>Telefone: </strong>{$contract.nrphone}</span>&nbsp;&nbsp;
+                <span><strong>Celular: </strong>{$contract.nrcellphone}</span><br>
+                <span><strong>Cidade: </strong>{$contract.descity}</span>&nbsp;&nbsp;
+                <span><strong>Estado: </strong>{$contract.desstate}</span><br>
+                <span><strong>Endereço: </strong>{$contract.desadress}</span>&nbsp;&nbsp;
+                <span><strong>Bairro: </strong>{$contract.neighborhood}</span>&nbsp;&nbsp;
+                <span><strong>CEP: </strong>{$contract.deszipcode}</span><br>
+                <span></li><strong>Inicio da Turma: </strong>{$contract.desstart}</span>&nbsp;&nbsp;
+                <span><strong>Consultora: </strong>{$contract.desconsultant}</span><br>
+              </address>
+           
+              
+              <address>
+                <h4><strong>Curso Contratado</strong></h5><br>
+
+                    <span>{$contract.descourse}</span>
+              </address>
+
+              <h4><b>Período/Contratado:</b></h4><br>
+
+              <span>{$contract.desperiod}</span><br><br>
+
+                <h4><b>NO CASO DE RESCISÃO DO PRESENTE CONTRATADO, PELO CONTRATANTE A EMPRESA NÃO RESTITUIRÁ O VALOR PAGO.</b></h4><br>
+               
+                <h4><b>CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE TREINAMENTO</b></h4>
+                <ul class="nav">
+                    <li> 
+                        1 - Como contra-prestação aos serviços educacionais prestados pela contratada, o contratante pagará à
+                        contratada os valores totais correspondente ao curso contratado.
+                    </li>
+
+                    <li>
+                        2 - Os valores devidos pelo contratante serão pagos da seguinte forma: Valor total de forma parcelada apenas
+                        por cartão de crédito aceitos pela empresa ou á vista de forma única em dinheiro, sendo pago no 1º
+                        (primeiro) dia de aula o valor total do curso.
+                    </li>
+                    <h4><b>NO CASO DE RESCISÃO DO PRESENTE CONTRATADO, PELO CONTRATANTE A EMPRESA NÃO
+                        RESTITUIRÁ O VALOR PAGO.</b>
+                    </h4>
+                    <li>
+                        3 - Desistência ou Cancelamento - O ALUNO reconhece que ao efetuar a garantia de vaga do treinamento,
+                        motivou uma serie de custos para a CA Cursos, tais como elaboração de apostilas, reserva de sala de
+                        aula, contratação de instrutores, e muitos outros custos. Decorrentes, bem como a impossibilidade de
+                        suprir a vaga com novo aluno. Desta forma a desistência ou cancelamento fará o ALUNO ficar sujeito ao
+                        pagamento uma multa no valor de <strong> R$ 300,00 (trezentos reais)</strong>.
+                    </li>
+                    <li>
+                        4 - Caso a CA Cursos não for notificada em prazo de 72 horas uteis de antecedência, 3 dias uteis antes do
+                        início do treinamento em questão. A notificação deve ser feita por escrito, assinada e entregue
+                        pessoalmente, por e-mail ou FAX ao consultor comercial responsável pela sua inscrição na CA Cursos. O
+                        aluno só poderá substituir seu treinamento por outro da CA Cursos, caso faça a requisição até 96 horas
+                        uteis, antes de iniciar o treinamento no qual estava inscrito inicialmente.
+                        
+                    </li>
+                    <li>
+                        5 -  O presente contrato e termo de contratação têm vigência para o curso contratado e prazo de pagamento
+                        contratado.                        
+                    </li>
+                    <li>
+                        6 - Reposição de aulas: A aula só será reposta se caso o contratante apresentar atestado médico próprio ou
+                        atestado de óbito de parentes de primeiro grau.
+                        
+                    </li>
+                    <li>
+                        7 -  As aulas começam no horário de Brasília e só será permitido uma tolerância de 20 minutos a partir do
+                        horário de início das aulas.                        
+                    </li>
+                    <li>
+                        8 - O curso é de caráter individual e insubstituível não podendo ser transferido a nenhuma pessoa apenas ao
+                        contratante que assina o contrato.                        
+                    </li>
+                    <li>
+                        9 - O curso é valido apenas para o período contratado não podendo ser aplicado e outra data, ou seja, não
+                        pode ser adiado definido a data de início.                        
+                    </li>
+                    <li>
+                        10 - As partes elegem o foro da Comarca de Goiânia-GO. “Onde os serviços de treinamentos serão prestados”,
+                        para qualquer demanda judicial relativa a presente contrato, com exclusão de qualquer outro, bem como,
+                        com expressa renúncia de qualquer outro.                        
+                    </li>
+                    <li>
+                        11 - Autorização pelo o direito de uso de imagem/fotografia do curso, sem quaisquer ônus presentes ou futuros
+                        para as partes.                        
+                    </li>
+                    <h4><strong>O Aluno/Contratante declara neste ato:</strong></h4>
+                    <li> 1 - Conhecer, concordar e aderir a todas as condições gerais do contrato.</li>
+                    <li> 2 - Declaro ter recebido cópia do contrato neste ato.</li><br><br>
+                   
+                </ul>
+                <div style="border-bottom: 1px solid #000;">
+                    <span>X &nbsp; {$contract.desname}    </span>
+                </div>
+               <div class="col-md-8" style="margin: 15px auto; text-align: center;">
+                 <h4><b>Assinatura do contratante, responsável legal e financeiro</b></h4>
+                 <span>Goiânia-GO <small>{$contract.descontractdate} </small></span>
+               </div>
+               
+        </div>
+            <!-- /.col -->
+           
+          </div>
+    <!-- end invoice -->
+          </div>
+          </div>
+      </div>
+    
+    </section>
+    <!-- /.content -->
+
+    <!-- /.content-wrapper -->
+
+  <!-- AdminLTE App -->
+
+  </body>
+  </html>
+    <script>
+
+ function prints(){
+
+    window.onload = function() {
+        var imprimir = document.querySelector("#imprimir");
+        var content	 = document.querySelector(".back");
+
+		    imprimir.onclick = function() {
+               
+                imprimir.style.display = 'none';
+                content.style.display = "none";
+
+		    	window.print();
+
+		    	var time = window.setTimeout(function() {
+                   
+                    imprimir.style.display = 'block';
+                    content.style.display = "block";
+
+					window.location.href = '/admin/contratos'
+
+		    	}, 1000);
+
+
+		    }
+
+	}
+
+
+  }
+
+   prints();
+
+</script>

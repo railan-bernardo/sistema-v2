@@ -1,0 +1,458 @@
+<!-- Content Wrapper. Contains page content -->
+ <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+          <section class="content-header">
+              <h1>
+                Dashboard
+                <small>Sistema de gerenciamento de Alunos</small>
+              </h1>
+
+            <ol class="breadcrumb">
+              <li><a href="/admin"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+              <li class="active">Home</li>
+            </ol>
+          </section>
+
+  
+
+  <!-- Main content -->
+
+       <section class="content">
+                 <div class="row">
+                   <div class="col-md-10">
+                         <div class="box box-primary">
+                              <div class="box-header with-border">
+                                <h3 class="box-title">Novo contrato</h3>
+                              </div>
+
+                                            <!-- /.box-header -->
+
+                                            <!-- form start -->
+
+                                              <form role="form" action="/admin/contrato/create" method="post">
+
+                                                        <div class="box-body">
+
+                                                                   <div class="form-group">
+
+                                                                        <label for="exampleInputNome">Nome</label>
+
+                                                                        <input type="text" class="form-control" name="desname" id="exampleInputNome" placeholder="Nome">
+
+                                                                   </div>
+<!-- 
+                                                                  <div class="form-group">
+
+                                                                      <label class="bt">
+
+                                                                      <input type="radio"  style="margin: 5px 0;"> &nbsp; Aluno Não é Responsavel
+
+                                                                      </label>
+
+                                                                  </div> -->
+
+                                                                  <div class="form-group resp" style=" margin: 8px 0">
+
+                                                                    <label for="exampleInputNome">Nome do Responsavel</label>
+
+                                                                    <input type="text" class="form-control"name="desparent" value="" id="exampleInputNome" placeholder="Responsavel Pelo Aluno">
+
+                                                                  </div>
+
+                                                                  <div class="form-group">
+
+                                                                    <label for="exampleInputEmail">Email</label>
+
+                                                                    <input type="email" class="form-control" name="desemail" id="exampleInputEmail" placeholder="email">
+
+                                                                  </div>
+
+
+
+                                                                  <div class="form-group">
+
+                                                                  <div class="col-xs-4 msg">
+
+                                                                  <label for="exampleInputCpf">CPF</label>
+
+                                                                    <input type="text" class="form-control cpf" name="nrcpf" id="exampleInputCpf" placeholder="CPF" data-inputmask="'mask': '999.999.999-99'" data-mask="">
+
+                                                                  </div>
+
+                                                                  <div class="col-xs-4">
+
+                                                                  <label for="exampleInputRg">RG</label>
+
+                                                                    <input type="text" class="form-control" name="nrrg" id="exampleInputRg" placeholder="RG">
+
+                                                                  </div>
+
+
+
+                                                                  <div class="col-xs-4">
+
+                                                                  <label for="exampleInputBirth">Data de Nacimento</label>
+
+                                                                    <input type="text" class="form-control" name="desbirthday" id="exampleInputBirth" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+
+                                                                  </div>
+
+                                                                  </div>
+
+
+
+                                                                  <div class="col-xs-12" style="margin: 10px 0;">
+
+                                                                  <label for="exampleInputBirt">Assinatura do contratante, responsável legal e financeiro</label>
+
+                                                                    <input type="text" class="form-control" name="descontractor" id="exampleInputBirt" placeholder="Assinatura">
+
+                                                                  </div>
+
+                                                                  
+
+
+
+                                                                  <div class="col-xs-4">
+
+                                                                  <label for="exampleInputBirthc">Data do Contrato</label>
+
+                                                                    <input type="text" class="form-control" name="descontractdate" id="exampleInputBirthc" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+
+                                                                  </div>
+
+
+                                                                  <div class="form-group">
+
+                                                                    <div class="col-xs-4">
+
+                                                                    <label for="exampleInputT">Telefone</label>
+
+                                                                      <input type="text" class="form-control" name="nrphone" value="" id="exampleInputT" data-inputmask="'mask': '(99) 9999-9999'" data-mask="">
+
+                                                                    </div>
+
+                                                                    <div class="col-xs-4">
+
+                                                                    <label for="exampleInputC">Celular</label>
+
+                                                                      <input type="text" class="form-control" name="nrcellphone" id="exampleInputC"   data-inputmask="'mask': '(99) 99999-9999'" data-mask="">
+
+                                                                    </div>
+
+                                                                  </div>
+
+
+
+                                                                  <div class="form-group">
+
+                                                                    <div class="col-xs-4">
+
+                                                                    <label for="exampleInputCity">Cidade</label>
+
+                                                                      <input type="text" class="form-control" name="descity" id="exampleInputCity" placeholder="Cidade">
+
+                                                                    </div>
+
+                                                                    <div class="col-xs-4">
+
+                                                                    <label for="exampleInputE">Estado</label>
+
+                                                                      <input type="text" class="form-control" name="desstate" id="exampleInputE" placeholder="Estado">
+
+                                                                    </div>
+
+                                                                  </div>
+
+
+
+                                                                  <div class="form-group">
+
+                                                                    <div class="col-xs-4">
+
+                                                                    <label>Bairro</label>
+
+                                                                      <input type="text" class="form-control" name="neighborhood" placeholder="Bairro">
+
+                                                                    </div>
+
+
+
+                                                                  <div class="form-group">
+
+                                                                    <div class="col-xs-4">
+
+                                                                    <label for="exampleInputEnd">Endereço</label>
+
+                                                                      <input type="text" class="form-control" name="desadress" id="exampleInputEnd" placeholder="Endereço">
+
+                                                                    </div>
+
+                                                                    <div class="col-xs-4">
+
+                                                                    <label for="exampleInputCE">CEP</label>
+
+                                                                      <input type="text" class="form-control" name="deszipcode" id="exampleInputCE" placeholder="CEP">
+
+                                                                    </div>
+
+                                                                  </div>
+
+
+
+
+
+                                                                  <div class="form-group">
+
+                                                                    <div class="col-xs-4">
+
+                                                                    <label>Inicio da Turma</label>
+
+                                                                      <input type="text" class="form-control" name="desstart" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+
+                                                                    </div>
+
+
+
+                                                                    <div class="col-xs-12">
+
+                                                                    <label for="exampleInputCo">Consultora</label>
+
+                                                                      <input type="text" class="form-control" name="desconsultant" id="exampleInputCo" placeholder="Consultora">
+
+                                                                    </div>
+
+                                                                  </div>
+
+
+
+                                                                  <div class="col-md-12">
+
+                                                                  <h1 class="title">Curso Contratado:</h1>
+
+                                                                  </div>
+
+
+
+                                                                  <div class="form-group">
+
+                                                                        <label> 
+
+                                                                        <input type="checkbox" name="descourse" value="Curso Profissionalizante Manutenção de Hardware + Software Básico em Celulares e Tablets 44 horas – Valor total de 1399,90 (UM MIL TREZENTOS E NOVENTA E NOVE REAIS) no cartãoaté 12x sem Juros."/>&nbsp;
+
+                                                                        Curso Profissionalizante Manutenção de Hardware + Software Básico em Celulares e Tablets 44 horas – Valor total de 1399,90 (UM MIL TREZENTOS E NOVENTA E NOVE REAIS) no cartãoaté 12x sem Juros.
+
+                                                                      </label>
+
+                                                                    </div>
+
+
+
+                                                                  <div class="form-group">
+
+                                                                        <label> 
+
+                                                                        <input type="checkbox" name="descourse" value="Curso de Reparo em Placas de iPhone Nível l ao lll - Valor total de 1.899,00 (Um Mil Oitocentos e Noventa e Nove Reais)  cartão de crédito até 12 x sem juros"/>&nbsp;
+
+                                                                        Curso de Reparo em Placas de iPhone Nível l ao lll - Valor total de 1.899,00 (Um Mil Oitocentos e Noventa e Nove Reais)  cartão de crédito até 12 x sem juros
+
+                                                                      </label>
+
+                                                                    </div>
+
+
+
+                                                                    <div class="form-group">
+
+                                                                    <label>
+
+                                                                        <input type="checkbox" name="descourse" value="Curso Profissionalizante Manutenção de Hardware + Software Básico em Celulares e Tablets + Software Livres (COMBO) – valor total de R$1.800,00 (UM MIL OITOCENTOS REAIS) no cartão de crédito até 12 x sem juros."/>  &nbsp;
+
+                                                                        Curso Profissionalizante Manutenção de Hardware + Software Básico em Celulares e Tablets + Software Livres (COMBO) – valor total de R$1.800,00 (UM MIL OITOCENTOS REAIS) no cartão de crédito até 12 x sem juros.
+
+                                                                      </label>
+
+                                                                    </div>
+
+
+
+                                                                    <div class="form-group">
+
+                                                                    <label>
+
+                                                                        <input type="checkbox" name="descourse" value="Curso Profissionalizante Manutenção de Hardware + Software Básico em Celulares e Tablets + Aulas Práticas (COMBO) – valor total de R$1.799,90 (UM MIL OITOCENTOS REAIS) no cartão de crédito 12x sem juros."/>  &nbsp;
+
+                                                                        Curso Profissionalizante Manutenção de Hardware + Software Básico em Celulares e Tablets + Aulas Práticas (COMBO) – valor total de R$1.799,90 (UM MIL OITOCENTOS REAIS) no cartão de crédito 12x sem juros.
+
+                                                                      </label>
+
+                                                                    </div>
+
+
+
+                                                                    <div class="form-group">
+
+                                                                    <label>
+
+                                                                        <input type="checkbox" name="descourse" value="Curso Profissionalizante de Software Livres – valor total de R$650,00 (SEISCENTOS E CINQUENTA REIAS) no cartão de crédito até 12x sem juros ."/>  &nbsp;
+
+                                                                        Curso Profissionalizante de Software Livres – valor total de R$650,00 (SEISCENTOS E CINQUENTA REIAS) no cartão de crédito até 12x sem juros .
+
+                                                                      </label>
+
+                                                                    </div>
+
+
+
+                                                                    <div class="form-group">
+
+                                                                    <label>
+
+                                                                        <input type="checkbox" name="descourse" value="Curso Profissionalizante de Software Avançado com BOX – valor total de R$850,00 (OITOCENTOS E CINQUENTA REIAS) no cartão de crédito até 12x sem juros."/>  &nbsp;
+
+                                                                        Curso Profissionalizante de Software Avançado com BOX – valor total de R$850,00 (OITOCENTOS E CINQUENTA REIAS) no cartão de crédito até 12x sem juros.
+
+                                                                      </label>
+
+                                                                    </div>
+
+                                                                <!-- end cursos contrato -->
+
+
+
+                                                                <div class="col-md-12">
+
+                                                                  <h1 class="title">Período/Contratado:</h1>
+
+                                                                </div>
+
+                                                                <div class="form-group">
+
+                                                                <label>
+
+                                                                        <input type="checkbox" name="desperiod" value="Integral: Curso de Manutenção em Celulares e Tablets – Duração de uma semana de segunda a sexta das 08:45 ás 18:15"/>  &nbsp;
+
+                                                                        Integral: Curso de Manutenção em Celulares e Tablets – Duração de uma semana de segunda a sexta das 08:45 ás 18:15
+
+                                                                      </label>
+
+                                                                    </div>
+
+                                                                    
+
+                                                                    <div class="form-group">
+
+                                                                    <label>
+
+                                                                      <input type="checkbox" name="desperiod" value="Integral: Curso de Software Livres – Duração de 2 (dois) dias dentre essas datas: segunda, terça, quarta, quinta ou sexta das 09:00 ás 17:00"/>  &nbsp; 
+
+                                                                          Integral: Curso de Software Livres – Duração de 2 (dois) dias dentre essas datas: segunda, terça, quarta, quinta ou sexta das 09:00 ás 17:00
+
+                                                                      </label>
+
+                                                                      </div>
+
+
+
+                                                                      <div class="form-group">
+
+                                                                      <label>
+
+                                                                      <input type="checkbox" name="desperiod" value="Noturno Curso de Manutenção em Celulares e Tablets – Duração de duas semana de segunda a sexta das 18:30 ás 22:30."/>  &nbsp;
+
+                                                                          Noturno Curso de Manutenção em Celulares e Tablets – Duração de duas semana de segunda a sexta das 18:30 ás 22:30.
+
+                                                                      </label>
+
+                                                                      </div>
+
+
+
+                                                                      <div class="form-group">
+
+                                                                      <label>
+
+                                                                      <input type="checkbox" name="desperiod" value="Noturno: Curso de Software Livres – Duração de 4 (quatro) dias de terça a sexta das 18:00 ás 22:00"/>  &nbsp;
+
+                                                                          Noturno: Curso de Software Livres – Duração de 4 (quatro) dias de terça a sexta das 18:00 ás 22:00
+
+                                                                      </label>
+
+                                                                      </div>
+
+
+
+                                                                      <div class="form-group">
+
+                                                                      <label>
+
+                                                                      <input type="checkbox" name="desperiod" value="Intensivo: Curso de Manutenção em Celulares e Tablets – Duração de 5 sábados seguidos – 09:00 as 18:00."/>  &nbsp;
+
+                                                                        Intensivo: Curso de Manutenção em Celulares e Tablets – Duração de 5 sábados seguidos – 09:00 as 18:00.
+
+                                                                      </label>
+
+                                                                      </div>
+
+
+
+                                                                      <div class="form-group">
+
+                                                                      <label> 
+
+                                                                      <input type="checkbox" name="desperiod" value="Intensivo: Curso de Software Livres – Duração de 2 (dois) sábados das 09:00 ás 17:00"/>  &nbsp;
+
+                                                                          Intensivo: Curso de Software Livres – Duração de 2 (dois) sábados das 09:00 ás 17:00
+
+                                                                      </label>
+
+                                                                      </div>
+
+                                                                      
+
+                                                                      <div class="form-group">
+
+                                                                      <label>
+
+                                                                      <input type="checkbox"name="desperiod" value="Matutino meio periodo – Duração de duas semanas de segunda a sexta das 08:45 a 12:30"/>  &nbsp;
+
+                                                                        Matutino meio periodo – Duração de duas semanas de segunda a sexta das 08:45 a 12:30
+
+                                                                      </label>
+
+                                                                      </div>
+
+
+
+                                                                      <div class="form-group">
+
+                                                                      <label>
+
+                                                                      <input type="checkbox" name="desperiod" value="Vespertino Meio Periodo – Duração de duas semanas de segunda a sexta das 13:30 a 18:15"/>  &nbsp;
+
+                                                                        Vespertino Meio Periodo – Duração de duas semanas de segunda a sexta das 13:30 a 18:15
+
+                                                                      </label>
+
+                                                                      </div>
+
+                                                        </div>
+
+                                                                <!-- /.box-body -->
+
+                                                      <div class="box-footer">
+                                                        <button type="submit" class="btn btn-success">Salvar</button>
+                                                      </div>
+
+                                              </form>
+
+                        </div>
+                    </div>
+
+          <!-- /.content -->
+
+      </section>
+ </div>
+  <!-- /.content-wrapper -->
+
+   

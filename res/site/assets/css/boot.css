@@ -1,0 +1,137 @@
+*, *::before, *::after{
+
+    margin: 0;
+
+    padding: 0;
+
+    outline: none;
+
+
+
+    font-size: 1em;
+
+    font-weight: 400;
+
+
+
+    box-sizing: border-box;
+
+    -webkit-box-sizing: border-box;
+
+    -moz-box-sizing: border-box;
+
+}
+
+
+
+ul{list-style: none;}
+
+a{text-decoration: none;}
+
+
+
+/* row */
+
+.row{
+
+    width: 90%;
+
+    margin: 0 auto;
+
+}
+
+
+
+.row-flex{
+
+    display: flex;
+
+}
+
+
+
+.row-wrapp{
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+}
+
+
+
+.row-center{
+
+    justify-content: space-around;
+
+}
+
+
+
+.container{
+
+    width: 100%;
+
+}
+
+.clear{clear: both;}
+
+
+
+.bg{
+
+    background: #48bb5c;
+
+}
+
+
+
+.alert{
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 15px;
+
+    border-radius: 4px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-weight: 600;
+
+    font-size: .9em;
+
+}
+
+
+
+.success{
+
+    background: #06a800;
+
+    color: #ffffff;
+
+}
+
+
+
+.danger{
+
+    background: #b40312;
+
+    color: #ffffff;
+
+}
+
+.form-group .check{
+    font-size: 1.8em;
+    color: #06a800;
+    width: 25px;
+    height: 45px;
+    display: none;
+}

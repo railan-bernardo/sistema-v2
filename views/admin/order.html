@@ -1,0 +1,169 @@
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+     <h1>Ordem de Serviço </h1>
+        <ol class="breadcrumb">
+          <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
+          <li class="active"><a href="">Ordem de serviço</a></li>
+        </ol>
+    </section>
+
+              <!-- Main content -->
+<section class="content">
+
+     <div class="row">
+                 <div class="col-md-12">
+                    <div class="box box-primary">
+                      
+                              <div class="box-header">
+                                <div class="col-md-6">
+                                    <form action="/admin/orders" class="search-form">
+                                            <div class="box-body" style="padding-top: 0;">
+                                                <div class="row">
+                                                  <div class="col-xs-12">
+                                                    <div class="input-group">
+                                                        <input type="text" name="search" class="form-control" placeholder="Faça sua Buscar" value="{$search}">
+                                                       
+                                                      <div class="input-group-btn">
+                                                          <button type="submit" class="btn btn-danger btn-flat"><i class="fa fa-search"></i>
+                                                          </button>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </form>
+                                </div>
+                                <a href="/admin/order/create" class="btn btn-success">Novo</a>
+                              </div>
+                             <div class="box-body no-padding">
+                                <table class="table table-striped">
+                                  <thead>
+                                      <tr>
+                                        <th style="width: 10px">#</th>
+                                        <th>Nome</th>
+                                        <th>Cidade</th>
+                                        <th>Turno</th>
+                                        <th>Consultora</th>
+                                        <th>Professor</th>
+                                        <th>Valor</th>
+                                        <th>Auxiliar</th>
+                                        <th>Data</th>
+                                        <th>Ações</th>
+                                      </tr>
+                                  </thead>
+                                    <tbody>
+                                      {loop="$order"}
+                                        <tr>
+                                          <td>{$value.idcontrol}</td>
+                                            <td>{$value.desname}</td>
+                                            <td>{$value.descity}</td>
+                                            <td>{$value.desshift}</td>
+                                            <td>{$value.desconsultant}</td>
+                                            <td>{$value.desteacher}</td>
+                                            <td>{$value.desprice}</td>
+                                            <td>{$value.deshelp}</td>
+                                            <td>{function="fomatDate($value.dtregister)"}</td>
+                                            <td>
+                                            <a href="/admin/order/{$value.idcontrol}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Editar</a>
+                                            <a  href="/admin/order/{$value.idcontrol}/delete" onclick="return confirm('Deseja realmente excluir?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
+                                            </td>
+                                        </tr>
+                                        {/loop}
+                                    </tbody>
+                                  </table>
+                                  <div class="col-sm-7">
+                                    <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                                      <ul class="pagination">
+                                        {loop="$pages"}
+                                             {if="$value.href == $value.text"}
+                                              <li class="active">
+                                                  <a href="{$value.href}" aria-controls="example2" data-dt-idx="1" tabindex="0">{$value.text}</a>
+                                              </li>
+                                              {else}
+                                              <li>
+                                                <a href="{$value.href}">{$value.text}</a>
+                                            </li>
+                                            {/if}
+                                         {/loop}
+                                      </ul>
+                                    </div>
+                                  </div>
+                                  <!-- end paginator -->
+                                  <div class="col-md-12">
+                                      <div class="row">
+                                        <div class="col-md-3 col-sm-6 col-xs-12">
+                                            <a href="/admin/starting/murilo">
+                                              <div class="info-box bg-aqua">
+                                                  <span class="info-box-icon"><i class="fa fa-get-pocket"></i></span>
+                                                  <div class="info-box-content">
+                                                    <span class="info-box-text">Professores</span>
+                                                    <span style="font-weight: 200;"> {if="$search !== 'Murilo' && $search !== 'Danilo' && $search !== 'murilo' && $search !== 'danilo'"}{else}{$search}{/if}</span>
+                                                    <span class="info-box-number muri_result"> {loop="$prof"} {$value.mes} <span style="font-weight: 200;">{if="$value.mes > 0"}Aulas{/if}</span>{/loop}</span>
+                                                    <span style="font-weight: 200;">Mês {function="date('m')"}</span>
+                                                  </div>
+                                                  <!-- /.info-box-content -->
+                                              </div>
+                                              <!-- /.info-box -->
+                                            </a>
+                                      </div>
+
+                                      <div class="col-md-3 col-sm-6 col-xs-12">
+                                        <a href="/admin/starting/murilo">
+                                          <div class="info-box bg-green">
+                                              <span class="info-box-icon"><i class="fa fa-get-pocket"></i></span>
+                                              <div class="info-box-content">
+                                                <span class="info-box-text">Consultores</span>
+                                                <span style="font-weight: 200;"> {if="$search !== 'Dorilene' && $search !== 'dorilene' && $search !== 'Larissa' && $search !== 'larissa'"}{else}{$search}{/if}</span>
+                                                <span class="info-box-number lari_result"> {loop="$lari"} {$value.mes} <span style="font-weight: 200;">{if="$value.mes > 0"}Venda{/if}</span>{/loop}</span>
+                                                <span style="font-weight: 200;">Mês {function="date('m')"}</span>
+                                              </div>
+                                              <!-- /.info-box-content -->
+                                          </div>
+                                          <!-- /.info-box -->
+                                        </a>
+                                  </div>
+                                      </div>
+                                  </div>
+                             </div>
+                                <!-- /.box-body -->
+                    </div>
+                 </div>
+     </div>
+
+</section>
+ <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+<script>
+
+var lari = document.querySelectorAll('td');
+var la = document.querySelector('.lari_result')
+var tr = document.querySelectorAll('tr');
+
+var setEl = Array.prototype.slice.call(tr)
+
+var setTr = Array.prototype.slice.call(lari);
+
+
+    setTr.forEach(element => {
+   
+
+   if(element.innerText == 'Larissa'){
+       
+           var count = element;
+           console.dir(setEl[2])//rowSpan
+          // la.innerHTML = tr[1].rowIndex
+       
+       
+   }
+});
+
+//console.log(lari.innerHTML)
+
+//var count = lari
+ 
+
+</script>
